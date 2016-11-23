@@ -1,5 +1,6 @@
 package dev.local.quickstart.javafx.simple.app.gui.app;
 
+import dev.local.quickstart.javafx.simple.app.gui.controller.MainController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,7 +25,12 @@ public class MainApp extends Application {
   @Override
   public void start(Stage primaryStage) throws Exception {
 
+    MainController controller = new MainController();
+    controller.setStage(primaryStage);
+
     FXMLLoader loader = new FXMLLoader();
+    loader.setController(controller);
+
     Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream("/fxml/main.fxml"));
     Scene scene = new Scene(rootNode, 800, 600);
     scene.getStylesheets().add("/styles/styles.css");
