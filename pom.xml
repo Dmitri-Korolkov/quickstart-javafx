@@ -18,6 +18,7 @@
     </properties>
 
     <modules>
+        <module>simple-app</module>
     </modules>
 
 </project>
