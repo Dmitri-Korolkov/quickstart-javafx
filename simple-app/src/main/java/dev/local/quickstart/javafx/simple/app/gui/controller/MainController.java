@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableMap;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -12,7 +13,10 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class MainController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainController implements Initializable {
 
   private static final Logger log = LoggerFactory.getLogger(MainController.class);
 
@@ -29,8 +33,8 @@ public class MainController {
   @FXML
   private TableColumn<Integer, String> clmNumber;
 
-  @FXML
-  public void initialize() {
+  @Override
+  public void initialize(URL location, ResourceBundle resources) {
     numbers = FXCollections.observableHashMap();
 
     numbers.put(1, new CallNumber(1, "aaa", 111));
